@@ -1,0 +1,27 @@
+.nav-item {
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    background-color: whitesmoke;
+    color: #2A0944;
+}
+
+@media screen and ( max-width:750px  ) {
+    li {
+        display: flex;
+        width: 100%;
+    }
+
+    .nav-item {
+        border-radius: 0px;
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+    }
+}
