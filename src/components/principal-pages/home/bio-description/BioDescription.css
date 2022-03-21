@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('../../../../fonts/Raleway-Regular.ttf');
+}
+
+.bio-spacing {
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.bio-spacing img {
+    max-width: 500px;
+}
+
+.bio-spacing hr {
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    color: white;
+    font-family: raleway;
+}
+
+.bio-text h3{
+    text-align: end;
+    font-size: 25px;
+}
+
+.bio-text p {
+    font-size: 40px;
+    font-weight: lighter;
+    max-width: 700px;
+    line-height: 55px;
+}
+
+.bio-text strong {
+    font-size: 47px;
+    font-weight: bold;
+}
+
+@media screen and ( max-width:750px ) {
+    .bio-spacing {
+        align-self: flex-start;
+    }
+
+    .bio-spacing img {
+        max-width: 200px;
+    }
+
+    .bio-text {
+        text-align: center;
+    }
+
+    .bio-text h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .bio-text p {
+        line-height: 26px;
+        font-size: 18px;
+    }
+
+    .bio-text strong {
+        font-size: 24px;
+    }
+}
+

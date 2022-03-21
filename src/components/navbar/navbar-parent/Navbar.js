@@ -27,7 +27,7 @@ export const Navbar = () => {
     return (
         <>
             <nav className="nav">
-                <Link to="/" className="namePage">Juan Fernando Yuco Jimenez</Link>
+                <Link to="/" className="namePage">Juan Yuco</Link>
                 <div className="nav-options">
                     <button
                         className="menu-button"
