@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { NavbarLinks } from '../navbar-links/NavbarLinks';
@@ -7,9 +7,15 @@ import './Navbar.css';
 export const Navbar = () => {
     const [ showMenu, setShowMenu ] = useState( false );
 
-    const handleBuMenuButoon = () => {
-        setShowMenu( !showMenu );
-    }
+    const handleBuMenuButoon = useCallback( ( state ) => {
+        setShowMenu( ( value ) => {
+            if ( state === undefined || state === null ) {
+                return !value;
+            }
+
+            return state;
+        });
+    }, [ setShowMenu ] );
 
     let buttonMenuClass = "fas fa-bars";
     let ulClass = "nav-options-hidde";
@@ -25,7 +31,7 @@ export const Navbar = () => {
                 <div className="nav-options">
                     <button
                         className="menu-button"
-                        onClick={ handleBuMenuButoon }
+                        onClick={ () => handleBuMenuButoon() }
                     >
                         <i className={ buttonMenuClass }></i>
                     </button>
@@ -35,14 +41,17 @@ export const Navbar = () => {
                         <NavbarLinks 
                             url="/"
                             title="Conocimientos"
+                            clickFuntion={ handleBuMenuButoon }
                         />
                         <NavbarLinks
                             url="/projects"
                             title="Experiencia"
+                            clickFuntion={ handleBuMenuButoon }
                         />
                         <NavbarLinks
                             url="/hobbies"
                             title="Hobbies"
+                            clickFuntion={ handleBuMenuButoon }
                         />
                     </ul>
                 </div>
